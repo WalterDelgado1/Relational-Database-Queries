@@ -95,17 +95,3 @@ insert into Cancelacion (ID, Fecha, Monto_devolucion, Reserva_ID) values (1,'202
 insert into Cancelacion (ID, Fecha, Monto_devolucion, Reserva_ID) values (3,'2022-11-14',40,3)
 insert into Cancelacion (ID, Fecha, Monto_devolucion, Reserva_ID) values (5,'2022-11-14',80,5)
 select * from Cancelacion
-
-select Hotel_Admin.Nombre, Hotel_Admin.Apellido
-from Hotel_Admin join Hotel H on H.ID = Hotel_Admin.Hotel_ID
-    join Habitacion H2 on H.ID = H2.Hotel_ID
-    join Reserva R2 on H2.ID = R2.Habitacion_ID
-    where R2.ID = 1
-order by H2.Hotel_ID
-
-select Usuario.Nombre, Usuario.Apellido
-from Usuario join Cliente C on Usuario.ID = C.Usuario_ID
-    join Reserva R2 on C.ID = R2.Cliente_ID
-    join Cancelacion C2 on R2.ID = C2.Reserva_ID
-order by C2.ID
-
